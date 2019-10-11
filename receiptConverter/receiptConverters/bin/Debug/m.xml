@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReceiptMessage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.cpandl.com">
+  <Store>
+    <OrgNr>556712-8508</OrgNr>
+    <OperatorId>121</OperatorId>
+    <Cashier>Andreas</Cashier>
+    <ReceiptId>003-16169 [601559]</ReceiptId>
+  </Store>
+  <ReceiptDate>Friday, October 11, 2019</ReceiptDate>
+  <StoreAddress>
+    <Name>MATBOODEN EKTORP C</Name>
+    <State>Nacka</State>
+    <Street>EKTORPSVÄGEN 4</Street>
+    <PostalCode>131 47</PostalCode>
+  </StoreAddress>
+  <Phone>
+    <AreaCode>
+      <string>08</string>
+    </AreaCode>
+    <LocalNumber>
+      <string>716 13 80</string>
+    </LocalNumber>
+    <TelDescription>
+      <string>Tel</string>
+    </TelDescription>
+  </Phone>
+  <Items>
+    <OrderedItem>
+      <ItemName>RUSH ANANAS + PANT</ItemName>
+      <OrderDescription>F</OrderDescription>
+      <UnitPrice>13.95</UnitPrice>
+      <Quantity>1</Quantity>
+      <Weight>0</Weight>
+      <Pant>1.00</Pant>
+      <TotalAmount>13.95</TotalAmount>
+    </OrderedItem>
+    <OrderedItem>
+      <ItemName>RAMLÖSA CITRUS + PANT</ItemName>
+      <OrderDescription>F</OrderDescription>
+      <UnitPrice>12.95</UnitPrice>
+      <Quantity>1</Quantity>
+      <Weight>0</Weight>
+      <Pant>1.00</Pant>
+      <TotalAmount>12.95</TotalAmount>
+    </OrderedItem>
+    <OrderedItem>
+      <ItemName>DIGESTIVE EKO</ItemName>
+      <UnitPrice>25.95</UnitPrice>
+      <Quantity>1</Quantity>
+      <Weight>0</Weight>
+      <TotalAmount>25.95</TotalAmount>
+    </OrderedItem>
+    <OrderedItem>
+      <ItemName>RED DEVIL</ItemName>
+      <UnitPrice>14.95</UnitPrice>
+      <Quantity>4</Quantity>
+      <Weight>0</Weight>
+      <TotalAmount>59.80</TotalAmount>
+    </OrderedItem>
+  </Items>
+  <ReceiptDescription>
+    <string>----------------</string>
+    <string>KORTKÖP</string>
+    <string>TILLBAKA SEK</string>
+    <string>Öppettider</string>
+    <string>Mån-Lör 8-21</string>
+    <string>Sön 8-20</string>
+    <string>Tack och välkommen åter</string>
+  </ReceiptDescription>
+  <SubTotalRec>112.65</SubTotalRec>
+  <PaymentTerminal>
+    <StoreID>715219</StoreID>
+    <CardCompany>Debit Master Card</CardCompany>
+    <CardNo>***********3777</CardNo>
+    <AID>A0000000041010</AID>
+    <REF>612031901527</REF>
+    <TVR>0000001000</TVR>
+    <TSI>E800</TSI>
+    <TerminalID>3 / 61203190</TerminalID>
+    <PaymentDescription>
+      <string>Personlig kod</string>
+      <string>BELOPP GODKÄNT AV KUND</string>
+      <string>SPARA KVITTOT, KUNDENS EXEMPLAR</string>
+    </PaymentDescription>
+  </PaymentTerminal>
+  <Tax>
+    <Procent>
+      <decimal>0.107</decimal>
+    </Procent>
+    <Net>100.59645</Net>
+    <TaxAmount>12.05355</TaxAmount>
+    <TaxDescription>
+      <string>Moms</string>
+      <string>Beloop</string>
+      <string>Netto</string>
+      <string>Brutto</string>
+    </TaxDescription>
+    <SubTotal>112.65</SubTotal>
+  </Tax>
+</ReceiptMessage>

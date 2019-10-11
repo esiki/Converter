@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReceiptMessage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.cpandl.com">
+  <Store>
+    <Title>The English Bookshop</Title>
+    <OrgNr>556162418</OrgNr>
+    <Email>info@bookshop.se</Email>
+    <REGID>00000000000001</REGID>
+  </Store>
+  <StoreAddress>
+    <City>UPPSALA</City>
+    <Street>SVARTBACKSGATAN 19</Street>
+  </StoreAddress>
+  <Phone>
+    <AreaCode>
+      <string>018</string>
+    </AreaCode>
+    <LocalNumber>
+      <string>10 05 10</string>
+    </LocalNumber>
+    <TelDescription>
+      <string>Phone</string>
+    </TelDescription>
+  </Phone>
+  <Items>
+    <OrderedItem>
+      <ItemName>Books/Böcker</ItemName>
+      <OrderDescription>T3</OrderDescription>
+      <UnitPrice>430</UnitPrice>
+      <Quantity>1</Quantity>
+      <Weight>0</Weight>
+      <TotalAmount>430</TotalAmount>
+    </OrderedItem>
+  </Items>
+  <ReceiptDescription>
+    <string>Visit us at www.bookshop.se</string>
+    <string>----------------</string>
+    <string>Öppet köp 14 dagar mot kvitto</string>
+    <string>(gäller ej specialbeställning)</string>
+    <string>The Uppsala English Bookshop</string>
+    <string>THANK YOU FOR YOUR</string>
+    <string>*** ORGINAL</string>
+  </ReceiptDescription>
+  <SubTotalRec>430</SubTotalRec>
+  <PaymentTerminal>
+    <PaymentDescription>
+      <string>B5F30000000009913</string>
+      <string>RUN NUMMER :</string>
+      <string>0000000160882</string>
+    </PaymentDescription>
+  </PaymentTerminal>
+  <Tax>
+    <Procent>
+      <decimal>0.039744</decimal>
+    </Procent>
+    <Net>412.910080</Net>
+    <TaxAmount>17.089920</TaxAmount>
+    <TaxDescription>
+      <string>1.00xITEMs</string>
+      <string>Moms3 KURS 6.000%</string>
+      <string>Moms3 BELLOP</string>
+      <string>MOMS TOTALT</string>
+      <string>KORT</string>
+    </TaxDescription>
+    <SubTotal>430</SubTotal>
+  </Tax>
+</ReceiptMessage>

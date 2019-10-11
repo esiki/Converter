@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReceiptMessage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.cpandl.com">
+  <Store>
+    <Title>WILLY:S Hemma</Title>
+    <OperatorId>41</OperatorId>
+    <Cashier>Sofia</Cashier>
+  </Store>
+  <ReceiptDate>Friday, October 11, 2019</ReceiptDate>
+  <StoreAddress>
+    <Name>Willys Hemma</Name>
+    <State>Saltsjöbaden</State>
+  </StoreAddress>
+  <Phone>
+    <AreaCode>
+      <string>08</string>
+    </AreaCode>
+    <LocalNumber>
+      <string>7480830</string>
+    </LocalNumber>
+    <TelDescription>
+      <string>TEL</string>
+    </TelDescription>
+  </Phone>
+  <Items>
+    <OrderedItem>
+      <ItemName>Mjölk</ItemName>
+      <UnitPrice>12</UnitPrice>
+      <Quantity>1</Quantity>
+      <Weight>0</Weight>
+      <TotalAmount>12</TotalAmount>
+    </OrderedItem>
+    <OrderedItem>
+      <ItemName>Ost</ItemName>
+      <UnitPrice>122</UnitPrice>
+      <Quantity>1</Quantity>
+      <Weight>0</Weight>
+      <TotalAmount>122</TotalAmount>
+    </OrderedItem>
+    <OrderedItem>
+      <ItemName>Kvisttomater</ItemName>
+      <OrderDescription>0,570kg*30,29kr/kg</OrderDescription>
+      <UnitPrice>30.29</UnitPrice>
+      <Quantity>0</Quantity>
+      <Weight>0.570</Weight>
+      <TotalAmount>0.00</TotalAmount>
+    </OrderedItem>
+  </Items>
+  <ReceiptDescription>
+    <string>----------------</string>
+    <string>SPARA KVITTOT</string>
+    <string>Välkommen åter!</string>
+    <string>Mån-Lör 8-21 Sön 9-21</string>
+    <string>Du betjänades av</string>
+  </ReceiptDescription>
+  <SubTotalRec>134.00</SubTotalRec>
+  <PaymentTerminal>
+    <StoreID>12345</StoreID>
+    <CardCompany>Master Card</CardCompany>
+    <CardNo>***********234</CardNo>
+    <AID>A00021</AID>
+    <REF>000003256</REF>
+    <TVR>0000048000</TVR>
+    <TSI>E800</TSI>
+    <TerminalID>2341</TerminalID>
+    <PaymentDescription>
+      <string>KontantLös</string>
+      <string>köp</string>
+      <string>Personlig kod</string>
+    </PaymentDescription>
+  </PaymentTerminal>
+  <Tax>
+    <Procent>
+      <decimal>0.107</decimal>
+      <decimal>0.2</decimal>
+    </Procent>
+    <Net>119.66200</Net>
+    <TaxAmount>14.33800</TaxAmount>
+    <TaxDescription>
+      <string>Moms%</string>
+      <string>Moms</string>
+      <string>Netto</string>
+      <string>Brutto</string>
+    </TaxDescription>
+    <SubTotal>134.00</SubTotal>
+  </Tax>
+</ReceiptMessage>

@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{B6765DD2-46BF-48CA-A1CB-F6F9457F3DED}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="receiptConverter" expanded="True">
+            <Node name="receiptConverters" expanded="True" />
+            <Node name="testXml" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>testXml/testXml.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.receiptConverters PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

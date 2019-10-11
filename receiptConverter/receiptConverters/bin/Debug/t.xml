@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReceiptMessage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.cpandl.com">
+  <Store>
+    <Title>Tempo</Title>
+    <Cashier>Dashti</Cashier>
+  </Store>
+  <ReceiptDate>Friday, October 11, 2019</ReceiptDate>
+  <StoreAddress>
+    <State>Nacka</State>
+    <Street>Jarlaberg</Street>
+  </StoreAddress>
+  <Phone>
+    <AreaCode>
+      <string>08</string>
+    </AreaCode>
+    <LocalNumber>
+      <string>718 46 66</string>
+    </LocalNumber>
+    <TelDescription>
+      <string>TEL</string>
+      <string>FAX</string>
+    </TelDescription>
+  </Phone>
+  <Items>
+    <OrderedItem>
+      <ItemName>MJÖLK EKOLOGISK 3%</ItemName>
+      <UnitPrice>14.95</UnitPrice>
+      <Quantity>1</Quantity>
+      <Weight>0</Weight>
+      <TotalAmount>14.95</TotalAmount>
+    </OrderedItem>
+  </Items>
+  <ReceiptDescription>
+    <string>----------------</string>
+    <string>ÖPPET FÖR DIG!</string>
+    <string>ALLA DAGAR</string>
+    <string>9-20</string>
+    <string>SPARA KVITTOT</string>
+    <string>Välkommen åter</string>
+    <string>Du betjänades av</string>
+  </ReceiptDescription>
+  <SubTotalRec>14.95</SubTotalRec>
+  <PaymentTerminal>
+    <StoreID>532697</StoreID>
+    <CardCompany>Debit Master Card</CardCompany>
+    <CardNo>***********3777</CardNo>
+    <AID>A0000000041010</AID>
+    <REF>000004088429</REF>
+    <TVR>0000001000</TVR>
+    <TSI>6800</TSI>
+    <TerminalID>1 / 00004098</TerminalID>
+    <PaymentDescription>
+      <string>Personlig kod</string>
+      <string>köp</string>
+    </PaymentDescription>
+  </PaymentTerminal>
+  <Tax>
+    <Procent>
+      <decimal>0.107</decimal>
+    </Procent>
+    <Net>13.35035</Net>
+    <TaxAmount>1.59965</TaxAmount>
+    <TaxDescription>
+      <string>Moms%</string>
+      <string>Moms</string>
+      <string>Netto</string>
+      <string>Brutto</string>
+    </TaxDescription>
+    <SubTotal>14.95</SubTotal>
+  </Tax>
+</ReceiptMessage>
