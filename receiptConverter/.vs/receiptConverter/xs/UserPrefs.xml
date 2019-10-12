@@ -1,11 +1,21 @@
 ﻿<Properties StartupConfiguration="{B6765DD2-46BF-48CA-A1CB-F6F9457F3DED}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="receiptConverters/StoreInfo.cs">
+    <Files>
+      <File FileName="receiptConverters/Program.cs" Line="17" Column="1" />
+      <File FileName="receiptConverters/ReceiptXML.cs" Line="496" Column="1" />
+      <File FileName="receiptConverters/ReceiptMessage.cs" Line="1" Column="1" />
+      <File FileName="receiptConverters/Tax.cs" Line="38" Column="1" />
+      <File FileName="receiptConverters/OrderedItem.cs" Line="7" Column="50" />
+      <File FileName="receiptConverters/PaymentTerminal.cs" Line="22" Column="10" />
+      <File FileName="receiptConverters/StoreInfo.cs" Line="14" Column="42" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="receiptConverter" expanded="True">
-            <Node name="receiptConverters" expanded="True" />
-            <Node name="testXml" selected="True" />
+            <Node name="receiptConverters" expanded="True">
+              <Node name="StoreInfo.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

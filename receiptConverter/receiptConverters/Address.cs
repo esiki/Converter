@@ -1,10 +1,20 @@
-﻿using System;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace receiptConverters
 {
     public class Address
     {
+        public Address(){}
+
+        public Address(string name, string city, string state, string street, string postalCode)
+        {
+            this.Name = name;
+            this.City = city;
+            this.State = state;
+            this.Street = street;
+            this.PostalCode = postalCode;
+        }
+
         [XmlElementAttribute(IsNullable = false)]
         public string Name { get; set; }
 

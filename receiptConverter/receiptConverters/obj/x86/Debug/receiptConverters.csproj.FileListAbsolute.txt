@@ -4,3 +4,4 @@
 /Users/es/Documents/Utveckling-envierment/XML/receiptConverter/receiptConverters/obj/x86/Debug/receiptConverters.csproj.CopyComplete
 /Users/es/Documents/Utveckling-envierment/XML/receiptConverter/receiptConverters/obj/x86/Debug/receiptConverters.exe
 /Users/es/Documents/Utveckling-envierment/XML/receiptConverter/receiptConverters/obj/x86/Debug/receiptConverters.pdb
+/Users/es/Documents/Utveckling-envierment/XML/receiptConverter/receiptConverters/obj/x86/Debug/receiptConverters.csprojAssemblyReference.cache

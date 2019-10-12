@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace receiptConverters
 {
     public class OrderedItem
-    {
-        
-
+    {        
         [XmlElementAttribute(IsNullable = false)]
         public string ItemName { get; set; }
 
@@ -24,14 +20,17 @@ namespace receiptConverters
         public decimal Weight { get; set; }
 
         [XmlElementAttribute(IsNullable = false)]
-        public string Pant { get; set; }
+        public decimal Pant { get; set; }
+
+        [XmlElementAttribute(IsNullable = false)]
+        public decimal Discount { get; set; }
 
         [XmlElementAttribute(IsNullable = false)]
         public decimal TotalAmount { get; set; }
 
         public void Calculate()
         {
-            TotalAmount = UnitPrice * Quantity;
+            TotalAmount = ((UnitPrice + Pant) * Quantity) - Discount;
         }
 
         public void CalculateKgPrice()

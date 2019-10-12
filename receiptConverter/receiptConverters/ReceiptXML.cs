@@ -1,7 +1,6 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Xml.Serialization;
 
 namespace receiptConverters
@@ -10,46 +9,43 @@ namespace receiptConverters
     {
         List<string> receiptList;
         List<string> paymentList;
-        List<decimal> procentList;
         List<string> taxList;
         List<string> telListCode;
         List<string> telListNr;
         List<string> telListDesc;
+        List<decimal> procentList;
 
         public ReceiptXML()
         {
             this.receiptList = new List<string>();
             this.paymentList = new List<string>();
-            this.procentList = new List<decimal>();
             this.taxList = new List<string>();
+            this.telListDesc = new List<string>();
             this.telListCode = new List<string>();
             this.telListNr = new List<string>();
-            this.telListDesc = new List<string>();
+            this.procentList = new List<decimal>();
         }
 
         public void CreateXML(string filename)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(ReceiptMessage));
 
-            if (filename.ToLower().Equals("w.xml"))
+            if (filename.ToLower().Equals("willys.xml"))
             {
                 #region Willys XML
                 using (TextWriter writer = new StreamWriter(filename))
                 {
                     ReceiptMessage receiptMessage = new ReceiptMessage();
 
-                    StoreInfo storeInfo = new StoreInfo();
-                    storeInfo.Title = "WILLY:S Hemma";
-                    storeInfo.OperatorId = "41";
-                    storeInfo.Cashier = "Sofia";
-                    receiptMessage.Store = storeInfo;
+                    StoreInfo storeInfo =
+                        new StoreInfo("WILLY:S Hemma", "556163-2232"
+                        , "41", "Sofia",null,null,null,"4/169");
+                   
+                    receiptMessage.Store = storeInfo;                  
 
-                    Address a = new Address();
-                    a.Name = "Willys Hemma";
-                    a.Street = null;
-                    a.City = null;
-                    a.State = "Saltsjöbaden";
-                    a.PostalCode = null;
+                    Address a =
+                        new Address("Willys Hemma",null, "Saltsjöbaden",null,null);
+                    
                     receiptMessage.StoreAddress = a;
 
                     receiptList.Clear();
@@ -77,6 +73,7 @@ namespace receiptConverters
                     orderedItemThree.ItemName = "Kvisttomater";
                     orderedItemThree.OrderDescription = "0,570kg*30,29kr/kg";
                     orderedItemThree.UnitPrice = (decimal)30.29;
+                    orderedItemThree.Quantity = (decimal)1.00;
                     orderedItemThree.Weight = 0.570M;
                     orderedItemThree.Calculate();
 
@@ -93,18 +90,14 @@ namespace receiptConverters
                     }
                     receiptMessage.SubTotalRec = subTotal;
 
-                    // ========
-                    PaymentTerminal paymentTerminal = new PaymentTerminal();
-                    paymentTerminal.CardCompany = "Master Card";
-                    paymentTerminal.CardNo = "***********234";
-                    paymentTerminal.StoreID = "12345";
-                    paymentTerminal.TerminalID = "2341";
-                    paymentTerminal.AID = "A00021";
-                    paymentTerminal.REF = "000003256";
-                    paymentTerminal.TVR = "0000048000";
-                    paymentTerminal.TSI = "E800";
+                  
 
                     // ========
+                    PaymentTerminal paymentTerminal =
+                        new PaymentTerminal("Master Card", "***********234", "12345",
+                        "2341", "A00021", "000003256", "0000048000", "E800");                   
+
+                    // ========                    
                     paymentList.Clear();
                     paymentList.Add("KontantLös");
                     paymentList.Add("köp");
@@ -124,8 +117,8 @@ namespace receiptConverters
                     taxList.Add("Moms");
                     taxList.Add("Netto");
                     taxList.Add("Brutto");
-
                     tax.TaxDescription = taxList;
+
                     tax.SubTotal = subTotal;
                     tax.CalculateTaxAmount();
                     tax.CalculateNet();
@@ -136,8 +129,12 @@ namespace receiptConverters
                     telListCode.Clear();
                     telListCode.Add("08");
                     tel.AreaCode = telListCode;
+
+                    telListNr.Clear();
                     telListNr.Add("7480830");
                     tel.LocalNumber = telListNr;
+
+                    telListDesc.Clear();
                     telListDesc.Add("TEL");
                     tel.TelDescription = telListDesc;
                     receiptMessage.Phone = tel;
@@ -149,7 +146,7 @@ namespace receiptConverters
                 }
                 #endregion
             }
-            else if (filename.ToLower().Equals("t.xml"))
+            else if (filename.ToLower().Equals("tempo.xml"))
             {
                 #region Tempo XML
                 using (TextWriter writer = new StreamWriter(filename))
@@ -157,17 +154,14 @@ namespace receiptConverters
 
                     ReceiptMessage receiptMessage = new ReceiptMessage();
 
-                    StoreInfo storeInfo = new StoreInfo();
-                    storeInfo.Title = "Tempo";
-                    storeInfo.Cashier = "Dashti";
+                    StoreInfo storeInfo =
+                        new StoreInfo("Tempo", null, null,"Dashti", null, null, null,"1/186");
+
                     receiptMessage.Store = storeInfo;
 
-                    Address a = new Address();
-                    a.Name = null;
-                    a.Street = "Jarlaberg";
-                    a.City = null;
-                    a.State = "Nacka";
-                    a.PostalCode = null;
+                    Address a =
+                        new Address(null, null, "Nacka", "Jarlaberg", null);
+
                     receiptMessage.StoreAddress = a;
 
                     receiptList.Clear();
@@ -200,15 +194,9 @@ namespace receiptConverters
                     }
                     receiptMessage.SubTotalRec = subTotal;
 
-                    PaymentTerminal paymentTerminal = new PaymentTerminal();
-                    paymentTerminal.CardCompany = "Debit Master Card";
-                    paymentTerminal.CardNo = "***********3777";
-                    paymentTerminal.StoreID = "532697";
-                    paymentTerminal.TerminalID = "1 / 00004098";
-                    paymentTerminal.AID = "A0000000041010";
-                    paymentTerminal.REF = "000004088429";
-                    paymentTerminal.TVR = "0000001000";
-                    paymentTerminal.TSI = "6800";
+                    PaymentTerminal paymentTerminal =
+                        new PaymentTerminal("Debit Master Card", "***********3777", "532697",
+                        "1 / 00004098", "A0000000041010", "000004088429", "0000001000", "6800");
 
                     //===========
                     paymentList.Clear();
@@ -221,14 +209,14 @@ namespace receiptConverters
                     procentList.Clear();
                     procentList.Add((decimal)0.107);
                     tax.Procent = procentList;
-
+                    
                     taxList.Clear();
                     taxList.Add("Moms%");
                     taxList.Add("Moms");
                     taxList.Add("Netto");
                     taxList.Add("Brutto");
-
                     tax.TaxDescription = taxList;
+
                     tax.SubTotal = subTotal;
                     tax.CalculateTaxAmount();
                     tax.CalculateNet();
@@ -238,14 +226,16 @@ namespace receiptConverters
                     telListCode.Clear();
                     telListCode.Add("08");
                     tel.AreaCode = telListCode;
+
                     telListNr.Clear();
                     telListNr.Add("718 46 66");
                     tel.LocalNumber = telListNr;
+                    
                     telListDesc.Clear();
                     telListDesc.Add("TEL");
                     telListDesc.Add("FAX");
                     tel.TelDescription = telListDesc;
-                    receiptMessage.Phone = tel;
+                    receiptMessage.Phone = tel;                
 
                     receiptMessage.ReceiptDate = System.DateTime.Now.ToLongDateString();
 
@@ -254,7 +244,7 @@ namespace receiptConverters
                 }
                 #endregion
             }
-            else if (filename.ToLower().Equals("e.xml"))
+            else if (filename.ToLower().Equals("bookshop.xml"))
             {
                 #region The English Bookshop XML
                 using (TextWriter writer = new StreamWriter(filename))
@@ -262,19 +252,15 @@ namespace receiptConverters
 
                     ReceiptMessage receiptMessage = new ReceiptMessage();
 
-                    StoreInfo storeInfo = new StoreInfo();
-                    storeInfo.Title = "The English Bookshop";
-                    storeInfo.Email = "info@bookshop.se";
-                    storeInfo.OrgNr = "556162418";
-                    storeInfo.REGID = "00000000000001";
+                    StoreInfo storeInfo =
+                        new StoreInfo("The English Bookshop","556162418",null,null
+                        ,null, "info@bookshop.se", "00000000000001",null);
+
                     receiptMessage.Store = storeInfo;
 
-                    Address a = new Address();
-                    a.Name = null;
-                    a.Street = "SVARTBACKSGATAN 19";
-                    a.City = "UPPSALA";
-                    a.State = null;
-                    a.PostalCode = null;
+                    Address a =
+                        new Address(null, "UPPSALA",null, "SVARTBACKSGATAN 19",null);
+
                     receiptMessage.StoreAddress = a;
 
                     receiptList.Clear();
@@ -308,15 +294,8 @@ namespace receiptConverters
                     }
                     receiptMessage.SubTotalRec = subTotal;
 
-                    PaymentTerminal paymentTerminal = new PaymentTerminal();
-                    paymentTerminal.CardCompany = null;
-                    paymentTerminal.CardNo = null;
-                    paymentTerminal.StoreID = null;
-                    paymentTerminal.TerminalID = null;
-                    paymentTerminal.AID = null;
-                    paymentTerminal.REF = null;
-                    paymentTerminal.TVR = null;
-                    paymentTerminal.TSI = null;
+                    PaymentTerminal paymentTerminal =
+                        new PaymentTerminal(null,null,null,null,null,null,null,null);
 
                     //===========
                     paymentList.Clear();
@@ -337,8 +316,8 @@ namespace receiptConverters
                     taxList.Add("Moms3 BELLOP");
                     taxList.Add("MOMS TOTALT");
                     taxList.Add("KORT");
-
                     tax.TaxDescription = taxList;
+
                     tax.SubTotal = subTotal;
                     tax.CalculateTaxAmount();
                     tax.CalculateNet();
@@ -348,9 +327,11 @@ namespace receiptConverters
                     telListCode.Clear();
                     telListCode.Add("018");
                     tel.AreaCode = telListCode;
+
                     telListNr.Clear();
                     telListNr.Add("10 05 10");
                     tel.LocalNumber = telListNr;
+
                     telListDesc.Clear();
                     telListDesc.Add("Phone");
                     tel.TelDescription = telListDesc;
@@ -361,7 +342,7 @@ namespace receiptConverters
                 }
                 #endregion
             }
-            else if (filename.ToLower().Equals("m.xml"))
+            else if (filename.ToLower().Equals("matboden.xml"))
             {
                 #region Matboden XML
                 using (TextWriter writer = new StreamWriter(filename))
@@ -369,20 +350,15 @@ namespace receiptConverters
 
                     ReceiptMessage receiptMessage = new ReceiptMessage();
 
-                    StoreInfo storeInfo = new StoreInfo();
-                    storeInfo.Title = null;
-                    storeInfo.OperatorId = "121";
-                    storeInfo.Cashier = "Andreas";
-                    storeInfo.ReceiptId = "003-16169 [601559]";
-                    storeInfo.OrgNr = "556712-8508";
-                    receiptMessage.Store = storeInfo;
+                    StoreInfo storeInfo = 
+                    new StoreInfo(null, "556712-8508", "121", "Andreas",
+                     "003-16169 [601559]", null, null,null);
+                    
+                    receiptMessage.Store = storeInfo;                                     
 
-                    Address a = new Address();
-                    a.Name = "MATBOODEN EKTORP C";
-                    a.Street = "EKTORPSVÄGEN 4";
-                    a.City = null;
-                    a.State = "Nacka";
-                    a.PostalCode = "131 47";
+                    Address a =
+                        new Address("MATBODEN EKTORP C",null, "Nacka", "EKTORPSVÄGEN 4", "131 47");
+                    
                     receiptMessage.StoreAddress = a;
 
                     receiptList.Clear();
@@ -401,7 +377,7 @@ namespace receiptConverters
                     orderedItemOne.UnitPrice = (decimal)13.95;
                     orderedItemOne.Quantity = (decimal)1.00;
                     orderedItemOne.OrderDescription = "F";
-                    orderedItemOne.Pant = "1.00";
+                    orderedItemOne.Pant = (decimal)1.00;
                     orderedItemOne.Calculate();
 
                     OrderedItem orderedItemTwo = new OrderedItem();
@@ -409,7 +385,7 @@ namespace receiptConverters
                     orderedItemTwo.UnitPrice = (decimal)12.95;
                     orderedItemTwo.Quantity = (decimal)1.00;
                     orderedItemTwo.OrderDescription = "F";
-                    orderedItemTwo.Pant = "1.00";
+                    orderedItemTwo.Pant = (decimal)1.00;
                     orderedItemTwo.Calculate();
 
                     OrderedItem orderedItemThree = new OrderedItem();
@@ -417,7 +393,7 @@ namespace receiptConverters
                     orderedItemThree.UnitPrice = (decimal)25.95;
                     orderedItemThree.Quantity = (decimal)1.00;
                     orderedItemThree.OrderDescription = null;
-                    orderedItemThree.Pant = null;
+                    orderedItemThree.Pant = (decimal)0.00;
                     orderedItemThree.Calculate();
 
                     OrderedItem orderedItemFour = new OrderedItem();
@@ -425,7 +401,8 @@ namespace receiptConverters
                     orderedItemFour.UnitPrice = (decimal)14.95;
                     orderedItemFour.Quantity = (decimal)4.00;
                     orderedItemFour.OrderDescription = null;
-                    orderedItemFour.Pant = null;
+                    orderedItemFour.Pant = (decimal)0.00;
+                    orderedItemFour.Discount = (decimal)5.85;
                     orderedItemFour.Calculate();
                     //==========================================
                     OrderedItem[] items = { orderedItemOne, orderedItemTwo, orderedItemThree, orderedItemFour };
@@ -440,15 +417,9 @@ namespace receiptConverters
                     }
                     receiptMessage.SubTotalRec = subTotal;
 
-                    PaymentTerminal paymentTerminal = new PaymentTerminal();
-                    paymentTerminal.CardCompany = "Debit Master Card";
-                    paymentTerminal.CardNo = "***********3777";
-                    paymentTerminal.StoreID = "715219";
-                    paymentTerminal.TerminalID = "3 / 61203190";
-                    paymentTerminal.AID = "A0000000041010";
-                    paymentTerminal.REF = "612031901527";
-                    paymentTerminal.TVR = "0000001000";
-                    paymentTerminal.TSI = "E800";
+                    PaymentTerminal paymentTerminal =
+                        new PaymentTerminal("Debit Master Card", "***********3777", "715219",
+                        "3 / 61203190", "A0000000041010", "612031901527", "0000001000", "E800");
 
                     //===========
                     paymentList.Clear();
@@ -468,8 +439,8 @@ namespace receiptConverters
                     taxList.Add("Beloop");
                     taxList.Add("Netto");
                     taxList.Add("Brutto");
-
                     tax.TaxDescription = taxList;
+
                     tax.SubTotal = subTotal;
                     tax.CalculateTaxAmount();
                     tax.CalculateNet();
@@ -479,9 +450,11 @@ namespace receiptConverters
                     telListCode.Clear();
                     telListCode.Add("08");
                     tel.AreaCode = telListCode;
+
                     telListNr.Clear();
                     telListNr.Add("716 13 80");
                     tel.LocalNumber = telListNr;
+
                     telListDesc.Clear();
                     telListDesc.Add("Tel");
                     tel.TelDescription = telListDesc;
@@ -496,5 +469,5 @@ namespace receiptConverters
                 }
             }
 
-        }
+        }    
 }

@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReceiptMessage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.cpandl.com">
   <Store>
-    <Title>Tempo</Title>
     <Cashier>Dashti</Cashier>
+    <StoreName>Tempo</StoreName>
+    <DeskNr>1/186</DeskNr>
   </Store>
-  <ReceiptDate>Friday, October 11, 2019</ReceiptDate>
+  <ReceiptDate>Saturday, October 12, 2019</ReceiptDate>
   <StoreAddress>
     <State>Nacka</State>
     <Street>Jarlaberg</Street>
   </StoreAddress>
   <Phone>
-    <AreaCode>
-      <string>08</string>
-    </AreaCode>
-    <LocalNumber>
-      <string>718 46 66</string>
-    </LocalNumber>
-    <TelDescription>
-      <string>TEL</string>
-      <string>FAX</string>
-    </TelDescription>
+    <AreaCode>08</AreaCode>
+    <LocalNumber>718 46 66</LocalNumber>
+    <TelDescription>TEL</TelDescription>
+    <TelDescription>FAX</TelDescription>
   </Phone>
   <Items>
     <OrderedItem>
@@ -27,6 +22,8 @@
       <UnitPrice>14.95</UnitPrice>
       <Quantity>1</Quantity>
       <Weight>0</Weight>
+      <Pant>0</Pant>
+      <Discount>0</Discount>
       <TotalAmount>14.95</TotalAmount>
     </OrderedItem>
   </Items>
@@ -49,10 +46,8 @@
     <TVR>0000001000</TVR>
     <TSI>6800</TSI>
     <TerminalID>1 / 00004098</TerminalID>
-    <PaymentDescription>
-      <string>Personlig kod</string>
-      <string>köp</string>
-    </PaymentDescription>
+    <PaymentDescription>Personlig kod</PaymentDescription>
+    <PaymentDescription>köp</PaymentDescription>
   </PaymentTerminal>
   <Tax>
     <Procent>

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Xml;
-
+﻿
 namespace receiptConverters
 {
     class MainClass
@@ -9,10 +7,10 @@ namespace receiptConverters
         {
             ReceiptXML start = new ReceiptXML();
 
-            start.CreateXML("w.xml");
-            //start.CreateXML("t.xml");
-            //start.CreateXML("e.xml");
-            //start.CreateXML("m.xml");
+            start.CreateXML("willys.xml");
+            start.CreateXML("tempo.xml");
+            start.CreateXML("bookshop.xml");
+            start.CreateXML("matboden.xml");
         }
     }
 }

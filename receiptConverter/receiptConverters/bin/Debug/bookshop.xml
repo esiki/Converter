@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReceiptMessage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.cpandl.com">
   <Store>
-    <Title>The English Bookshop</Title>
     <OrgNr>556162418</OrgNr>
+    <StoreName>The English Bookshop</StoreName>
     <Email>info@bookshop.se</Email>
     <REGID>00000000000001</REGID>
   </Store>
@@ -11,15 +11,9 @@
     <Street>SVARTBACKSGATAN 19</Street>
   </StoreAddress>
   <Phone>
-    <AreaCode>
-      <string>018</string>
-    </AreaCode>
-    <LocalNumber>
-      <string>10 05 10</string>
-    </LocalNumber>
-    <TelDescription>
-      <string>Phone</string>
-    </TelDescription>
+    <AreaCode>018</AreaCode>
+    <LocalNumber>10 05 10</LocalNumber>
+    <TelDescription>Phone</TelDescription>
   </Phone>
   <Items>
     <OrderedItem>
@@ -28,6 +22,8 @@
       <UnitPrice>430</UnitPrice>
       <Quantity>1</Quantity>
       <Weight>0</Weight>
+      <Pant>0</Pant>
+      <Discount>0</Discount>
       <TotalAmount>430</TotalAmount>
     </OrderedItem>
   </Items>
@@ -42,11 +38,9 @@
   </ReceiptDescription>
   <SubTotalRec>430</SubTotalRec>
   <PaymentTerminal>
-    <PaymentDescription>
-      <string>B5F30000000009913</string>
-      <string>RUN NUMMER :</string>
-      <string>0000000160882</string>
-    </PaymentDescription>
+    <PaymentDescription>B5F30000000009913</PaymentDescription>
+    <PaymentDescription>RUN NUMMER :</PaymentDescription>
+    <PaymentDescription>0000000160882</PaymentDescription>
   </PaymentTerminal>
   <Tax>
     <Procent>

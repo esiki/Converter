@@ -6,23 +6,17 @@
     <Cashier>Andreas</Cashier>
     <ReceiptId>003-16169 [601559]</ReceiptId>
   </Store>
-  <ReceiptDate>Friday, October 11, 2019</ReceiptDate>
+  <ReceiptDate>Saturday, October 12, 2019</ReceiptDate>
   <StoreAddress>
-    <Name>MATBOODEN EKTORP C</Name>
+    <Name>MATBODEN EKTORP C</Name>
     <State>Nacka</State>
     <Street>EKTORPSVÄGEN 4</Street>
     <PostalCode>131 47</PostalCode>
   </StoreAddress>
   <Phone>
-    <AreaCode>
-      <string>08</string>
-    </AreaCode>
-    <LocalNumber>
-      <string>716 13 80</string>
-    </LocalNumber>
-    <TelDescription>
-      <string>Tel</string>
-    </TelDescription>
+    <AreaCode>08</AreaCode>
+    <LocalNumber>716 13 80</LocalNumber>
+    <TelDescription>Tel</TelDescription>
   </Phone>
   <Items>
     <OrderedItem>
@@ -31,8 +25,9 @@
       <UnitPrice>13.95</UnitPrice>
       <Quantity>1</Quantity>
       <Weight>0</Weight>
-      <Pant>1.00</Pant>
-      <TotalAmount>13.95</TotalAmount>
+      <Pant>1</Pant>
+      <Discount>0</Discount>
+      <TotalAmount>14.95</TotalAmount>
     </OrderedItem>
     <OrderedItem>
       <ItemName>RAMLÖSA CITRUS + PANT</ItemName>
@@ -40,14 +35,17 @@
       <UnitPrice>12.95</UnitPrice>
       <Quantity>1</Quantity>
       <Weight>0</Weight>
-      <Pant>1.00</Pant>
-      <TotalAmount>12.95</TotalAmount>
+      <Pant>1</Pant>
+      <Discount>0</Discount>
+      <TotalAmount>13.95</TotalAmount>
     </OrderedItem>
     <OrderedItem>
       <ItemName>DIGESTIVE EKO</ItemName>
       <UnitPrice>25.95</UnitPrice>
       <Quantity>1</Quantity>
       <Weight>0</Weight>
+      <Pant>0</Pant>
+      <Discount>0</Discount>
       <TotalAmount>25.95</TotalAmount>
     </OrderedItem>
     <OrderedItem>
@@ -55,7 +53,9 @@
       <UnitPrice>14.95</UnitPrice>
       <Quantity>4</Quantity>
       <Weight>0</Weight>
-      <TotalAmount>59.80</TotalAmount>
+      <Pant>0</Pant>
+      <Discount>5.85</Discount>
+      <TotalAmount>53.95</TotalAmount>
     </OrderedItem>
   </Items>
   <ReceiptDescription>
@@ -67,7 +67,7 @@
     <string>Sön 8-20</string>
     <string>Tack och välkommen åter</string>
   </ReceiptDescription>
-  <SubTotalRec>112.65</SubTotalRec>
+  <SubTotalRec>108.80</SubTotalRec>
   <PaymentTerminal>
     <StoreID>715219</StoreID>
     <CardCompany>Debit Master Card</CardCompany>
@@ -77,24 +77,22 @@
     <TVR>0000001000</TVR>
     <TSI>E800</TSI>
     <TerminalID>3 / 61203190</TerminalID>
-    <PaymentDescription>
-      <string>Personlig kod</string>
-      <string>BELOPP GODKÄNT AV KUND</string>
-      <string>SPARA KVITTOT, KUNDENS EXEMPLAR</string>
-    </PaymentDescription>
+    <PaymentDescription>Personlig kod</PaymentDescription>
+    <PaymentDescription>BELOPP GODKÄNT AV KUND</PaymentDescription>
+    <PaymentDescription>SPARA KVITTOT, KUNDENS EXEMPLAR</PaymentDescription>
   </PaymentTerminal>
   <Tax>
     <Procent>
       <decimal>0.107</decimal>
     </Procent>
-    <Net>100.59645</Net>
-    <TaxAmount>12.05355</TaxAmount>
+    <Net>97.15840</Net>
+    <TaxAmount>11.64160</TaxAmount>
     <TaxDescription>
       <string>Moms</string>
       <string>Beloop</string>
       <string>Netto</string>
       <string>Brutto</string>
     </TaxDescription>
-    <SubTotal>112.65</SubTotal>
+    <SubTotal>108.80</SubTotal>
   </Tax>
 </ReceiptMessage>
